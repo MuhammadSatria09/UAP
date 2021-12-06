@@ -141,13 +141,29 @@ mvwscanw(win3,3,10,"%d", &tebakan);
 		
 	if(tebakan == dadu){
 		
-		mvprintw(9,47,"Anda Benar !");
+		mvprintw(9,54,"Anda Benar !");
+		refresh();
 		
 		}
 		else{
-			mvprintw(9,24,"Anda Salah !");
-			mv
-		}
+			mvprintw(9,54,"Anda Salah !");
+			refresh();
+				}
+			
+			char y;
+			noecho();
+			mvprintw(21,40,"Apakah anda ingin bermain lagi?(y/n) : ");
+			y = getch();
+			clear();
+			
+			if(y =='y'){
+				goto k;
+			}
+			else{
+				mvprintw(10,46,"Terimakasih telah bermain!");
+				Sleep(700);
+				exit;
+			}
 }
 
 int lanjut(){
