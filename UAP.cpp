@@ -313,5 +313,4 @@ int main(){
 	
 	endwin();
 	
-
 }
