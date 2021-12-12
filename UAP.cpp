@@ -1,15 +1,24 @@
-#include <iostream>
 #include <time.h>
 #include <ncurses.h>
 #include <windows.h>
-#define memory 100
-	
+#include <string>
+#define memory 100		//untuk mengatasi bug input scanw
+
 using namespace std;
-WINDOW * win1; // window untuk menu
+
+WINDOW * win1; // window untuk menu (Fullscreen)
 WINDOW * win2; // window untuk dadu
 WINDOW * win3; // window untuk input user
 
-
+    short int dadu; //Menyimpan data hasil acak untuk dadu yang ingin di tebak
+	int saldo = 100; //Sakdo pemain yang akan dikurangkan atau ditambahkan
+	int taruhan; //Taruhan pemain
+	
+	string peraturan[3] = {"1. Dilarang menggunakan cheat","2. Pemain harus berusia minimal 18 tahun","3. Pemain akan diberikan saldo awal $100"};
+	string cara[3] = {"1. Pemain diminta untuk memasukkan jumlah taruhan", "2. Pemain diminta untuk menebak angka 1-6" , "3. Selamat bermain"};
+	//Peraturan dan tata cara bermain
+	
+	
 void loading(){		//animasi loading bar beserta peringatan
 	curs_set(0);
 	start_color();
