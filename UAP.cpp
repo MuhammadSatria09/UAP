@@ -506,6 +506,7 @@ void menu(){		//menu pernyataan apakah pemain berada di atas umur
 	}
 	
 }
+
 int main(){
 		
 	initscr();
