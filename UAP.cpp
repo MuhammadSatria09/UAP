@@ -451,7 +451,8 @@ void tidak(){		//jika user mengaku bahwa masih berada di bawah umur
 	
 }
 
-void menu(){
+void menu(){		//menu pernyataan apakah pemain berada di atas umur
+	curs_set(0);
 	start_color();
 	init_pair(1, COLOR_BLACK, COLOR_WHITE);
 	
@@ -463,8 +464,8 @@ void menu(){
 	mvwprintw(win1,17,65,"TIDAK");
 	wrefresh(win1);
 	
-	char pos ;
-	int selection;
+	char pos ;		//mengindikasikan tombol yang di tekan user
+	int selection;	//menyimpan pilihan user
 	
 	for(int i=0; ; ){
 		noecho();
@@ -499,12 +500,12 @@ void menu(){
 				tidak();
 				break;
 			}
+			
 		}
-
+		
 	}
 	
 }
-
 int main(){
 		
 	initscr();
