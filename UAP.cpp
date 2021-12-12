@@ -10,6 +10,44 @@ WINDOW * win2; // window untuk dadu
 WINDOW * win3; // window untuk input user
 
 
+void loading(){		//animasi loading bar beserta peringatan
+	curs_set(0);
+	start_color();
+	init_pair(2, COLOR_BLACK, COLOR_WHITE);		//format warna dengan font berwarna hitam dan background putih
+	WINDOW * win1 = newwin(0,0,0,0);
+	refresh();
+	box(win1,0,0);
+	
+	for(int t= 1;t<=20;t++){
+		
+	wattron(win1,COLOR_PAIR(2));	
+	mvwprintw(win1,10,50+t," ");
+	wattroff(win1,COLOR_PAIR(2));
+	mvwprintw(win1,12,57,"Loading");
+	
+	if(t<10){
+	mvwprintw(win1,14,47,"Berjudi adalah sebuah dosa");
+	mvwprintw(win1,15,54,"Galatia 5:24");
+	mvwprintw(win1,16,42,"Barang siapa menjadi milik Yesus, ");
+	mvwprintw(win1,17,50,"ia telah menyalibkan");
+	mvwprintw(win1,18,34,"daging dengan segala hawa nafsu dan keinginannya.");
+	wrefresh(win1);
+	Sleep(350);
+	}
+	else{
+	mvwprintw(win1,14,47,"Berjudi adalah sebuah dosa");
+	mvwprintw(win1,15,52,"Al-Ma'idah : 90");
+	mvwprintw(win1,16,40,"    Wahai orang-orang yang beriman!");
+	mvwprintw(win1,17,19,"Sesungguhnya minuman keras, berjudi, (berkurban untuk) berhala, dan mengundi nasib ");
+	mvwprintw(win1,18,25,"dengan anak panah, adalah perbuatan keji dan termasuk perbuatan setan.");
+	mvwprintw(win1,19,30,"Maka jauhilah (perbuatan-perbuatan) itu agar kamu beruntung.");
+	wrefresh(win1);
+	Sleep(350);	
+	}
+}
+	wattroff(win1,COLOR_PAIR(2));
+		
+}
 
 
 void dadu1(){
