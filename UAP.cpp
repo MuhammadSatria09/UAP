@@ -359,8 +359,13 @@ void dadu21(){	//animasi "dadu 21" berkelap kelip
 	
 }
 
-int lanjut(){
-	clear();
+void lanjut(){	//jika user menyatakan telah di atas umur
+		curs_set(0);
+	for(int i=0;i<=3;i++){	//mengulangi animasi kelap kelip "dadu 21" sebanyak 5 kali
+		dadu21();
+	
+	}
+
 	WINDOW * win1 = newwin (0,0,0,0);
 	refresh();
 	box(win1,0,0);
@@ -376,69 +381,73 @@ int lanjut(){
 	mvwprintw(win1,12,16,";   :  .'    |  | ,'        ;   :  .'    '  :  `--'   \\        |   :    .'      ;   |.' ");
 	mvwprintw(win1,13,16,"|   ,.'      `--''          |   ,.'      :  ,      .-./        ;   | .'         '---'   ");
 	mvwprintw(win1,14,16,"'---'                       '---'         `--`----'            `---'                    ");
-	wrefresh(win1);
-	Sleep(700);
-	wclear(win1);
-	refresh();
-	
-	box(win1,0,0);
-	mvwprintw(win1,3,16," ");
-	wrefresh(win1);
-	Sleep(700);
-	wclear(win1);
-	refresh();
-	
-	box(win1,0,0);
-	mvwprintw(win1,3,16,"    ,---,       ,---,           ,---,                                ,----,       ,---,");
-	mvwprintw(win1,4,16,"  .'  .' `\\    '  .' \\        .'  .' `\\           ,--,             .'   .' \\   ,`--.' | ");
-	mvwprintw(win1,5,16,",---.'     \\  /  ;    '.    ,---.'     \\        ,'_ /|           ,----,'    | /    /  : ");
-	mvwprintw(win1,6,16,"|   |  .`\\  |:  :       \\   |   |  .`\\  |  .--. |  | :           |    :  .  ;:    |.' '  ");
-	mvwprintw(win1,7,16,"|   ' '  ;  :|  :  ' ;.   : |   ' '  ;  :|  ' | |  . .           `----'/  ;     '   ' ; ");
-	mvwprintw(win1,8,16,"'   | ;  .  ||  |  ;/  \\   \\'   | ;  .  ||  | ' |  | |             /  ;  /      |   | | ");
-	mvwprintw(win1,9,16,"|   | :  |  ''  :  | \\  \\ ,'|   | :  |  ':  | | :  ' ;            ;  /  /-,     '   : ; ");
-	mvwprintw(win1,10,16,"'   : | /  ; |  |  '  '--'  '   : | /  ; |  ; ' |  | '           /  /  /.`|     |   | '  ");
-	mvwprintw(win1,11,16,"|   | '` ,/  |  :  :        |   | '` ,/  :  | : ;  ; |         ./__;      :     '   : | ");
-	mvwprintw(win1,12,16,";   :  .'    |  | ,'        ;   :  .'    '  :  `--'   \\        |   :    .'      ;   |.' ");
-	mvwprintw(win1,13,16,"|   ,.'      `--''          |   ,.'      :  ,      .-./        ;   | .'         '---'   ");
-	mvwprintw(win1,14,16,"'---'                       '---'         `--`----'            `---'                    ");
-	wrefresh(win1);
-	Sleep(700);
-	wclear(win1);
-	refresh();
-	
-	box(win1,0,0);
-	mvwprintw(win1,3,16," ");
-	wrefresh(win1);
-	Sleep(700);
-	wclear(win1);
-	refresh();
-	
-	
-	
-	box(win1,0,0);
-	mvwprintw(win1,3,16,"    ,---,       ,---,           ,---,                                ,----,       ,---,");
-	mvwprintw(win1,4,16,"  .'  .' `\\    '  .' \\        .'  .' `\\           ,--,             .'   .' \\   ,`--.' | ");
-	mvwprintw(win1,5,16,",---.'     \\  /  ;    '.    ,---.'     \\        ,'_ /|           ,----,'    | /    /  : ");
-	mvwprintw(win1,6,16,"|   |  .`\\  |:  :       \\   |   |  .`\\  |  .--. |  | :           |    :  .  ;:    |.' '  ");
-	mvwprintw(win1,7,16,"|   ' '  ;  :|  :  ' ;.   : |   ' '  ;  :|  ' | |  . .           `----'/  ;     '   ' ; ");
-	mvwprintw(win1,8,16,"'   | ;  .  ||  |  ;/  \\   \\'   | ;  .  ||  | ' |  | |             /  ;  /      |   | | ");
-	mvwprintw(win1,9,16,"|   | :  |  ''  :  | \\  \\ ,'|   | :  |  ':  | | :  ' ;            ;  /  /-,     '   : ; ");
-	mvwprintw(win1,10,16,"'   : | /  ; |  |  '  '--'  '   : | /  ; |  ; ' |  | '           /  /  /.`|     |   | '  ");
-	mvwprintw(win1,11,16,"|   | '` ,/  |  :  :        |   | '` ,/  :  | : ;  ; |         ./__;      :     '   : | ");
-	mvwprintw(win1,12,16,";   :  .'    |  | ,'        ;   :  .'    '  :  `--'   \\        |   :    .'      ;   |.' ");
-	mvwprintw(win1,13,16,"|   ,.'      `--''          |   ,.'      :  ,      .-./        ;   | .'         '---'   ");
-	mvwprintw(win1,14,16,"'---'                       '---'         `--`----'            `---'                    ");
-	mvwprintw(win1,17,52,"Press any key !");
-	wrefresh(win1);	                                                                                                                                        
+	mvwprintw(win1,20,52,"Press any key !");
+	wrefresh(win1);	         
+	noecho();                                                                                                                               
 	getch();
-	Sleep(1000);
 	clear();
-	gamedadu();
+
+	kembali:
+	clear();
+	box(win1,0,0);
+	refresh();
+	
+	//menu sebelum memulai loading gane
+char sec;
+	mvprintw(14,50,"1. Peraturan Bermain");	//menjelaskan peraturan bermain game
+	mvprintw(15,50,"2. Cara Bermain");		//menjelaskan cara memainkan game
+	mvprintw(16,50,"3. Mulai Bermain");		//memulai permainan
+
+	sec=getch();
+	
+	if(sec=='1'){
+		clear();
+		box(win1,0,0);
+		for(int x=0;x<3;x++){
+			mvprintw(14+x,45,"%s",peraturan[x].c_str());
+		}
+		attron(COLOR_PAIR(1));
+		mvprintw(19,56,"KEMBALI");
+		attroff(COLOR_PAIR(1));
+		getch();
+		clear();
+		WINDOW * win1 = newwin(0,0,0,0);
+		box(win1,0,0);
+		refresh();
+		wrefresh(win1);
+		goto kembali;
+	}
+	if(sec=='2'){
+		clear();
+		box(win1,0,0);
+		for(int x=0;x<3;x++){
+			mvprintw(14+x,45,"%s",cara[x].c_str());
+		}
+		attron(COLOR_PAIR(1));
+		mvprintw(19,56,"KEMBALI");
+		attroff(COLOR_PAIR(1));
+		getch();
+		clear();
+		WINDOW * win1 = newwin(0,0,0,0);
+		box(win1,0,0);
+		refresh();
+		wrefresh(win1);
+		goto kembali;
+	}
+	if(sec=='3'){
+		clear();
+		box(win1,0,0);
+		
+		loading();	
+		gamedadu();
+	}
+	
 }
 
-void tidak(){
+void tidak(){		//jika user mengaku bahwa masih berada di bawah umur
+	curs_set(0);
 	clear();
-	printw("MAAF ANDA BELUM CUKUP UMUR");
+	mvprintw(15,47,"MAAF ANDA BELUM CUKUP UMUR");
 	
 }
 
