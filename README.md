@@ -9,7 +9,7 @@ Kelompok :
 (2117051031)
 
 3. Talia desty maharani
-()
+(2117051017)
 
 Project ini adalah pembuatan game tebak dadu yang di buat dengan bahasa C++.
 
