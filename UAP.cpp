@@ -59,7 +59,8 @@ void loading(){		//animasi loading bar beserta peringatan
 }
 
 
-void dadu1(){
+void dadu1(){		//menampilkan gambar untuk dadu ber angka 1
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);
@@ -67,7 +68,8 @@ void dadu1(){
 	wrefresh(win2);
 }
 
-void dadu2(){
+void dadu2(){		//menampilkan gambar untuk dadu ber angka 2
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);		
@@ -76,7 +78,8 @@ void dadu2(){
 	wrefresh(win2);
 }
 
-void dadu3(){
+void dadu3(){		//menampilkan gambar untuk dadu ber angka 3
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);	
@@ -86,7 +89,8 @@ void dadu3(){
 	wrefresh(win2);		
 }
 
-void dadu4(){
+void dadu4(){		//menampilkan gambar untuk dadu ber angka 4
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);	
@@ -97,7 +101,8 @@ void dadu4(){
 	wrefresh(win2);	
 }
 
-void dadu5(){
+void dadu5(){		//menampilkan gambar untuk dadu ber angka 5
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);
@@ -109,7 +114,8 @@ void dadu5(){
 	wrefresh(win2);		
 }
 
-void dadu6(){
+void dadu6(){		//menampilkan gambar untuk dadu ber angka 6
+	curs_set(0);
 	WINDOW * win2 = newwin (7,13,12,54);
 	refresh();
 	box(win2,0,0);
