@@ -128,19 +128,28 @@ void dadu6(){		//menampilkan gambar untuk dadu ber angka 6
 	wrefresh(win2);
 }
 
-void kocok(){
+void kocok(){		//Animasi pengocokan dadu
 	
-	string kocok [6] = {"dadu1","dadu2","dadu3","dadu4","dadu5","dadu6"};
-	
-	
-	
-	for(int i=0;i<6;i++){
 		
-		kocok [i];
-		refresh();
+	for(int i=0;i<5;i++){
+		dadu1();
 		Sleep(100);
 		clear();
-		
+		dadu2();
+		Sleep(100);
+		clear();
+		dadu3();
+		Sleep(100);
+		clear();
+		dadu4();
+		Sleep(100);
+		clear();
+		dadu5();
+		Sleep(100);
+		clear();
+		dadu6();
+		Sleep(100);
+		clear();		
 	}
 	
 }
