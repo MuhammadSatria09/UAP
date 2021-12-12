@@ -328,7 +328,36 @@ mvwscanw(win3,3,10,"%d", &tebakan);		//menerima input user untuk angka tebakan p
 			}
 }
 
-
+void dadu21(){	//animasi "dadu 21" berkelap kelip
+	curs_set(0);
+	WINDOW * win1 = newwin (0,0,0,0);
+	refresh();
+	box(win1,0,0);
+	mvwprintw(win1,3,16,"    ,---,       ,---,           ,---,                                ,----,       ,---,");
+	mvwprintw(win1,4,16,"  .'  .' `\\    '  .' \\        .'  .' `\\           ,--,             .'   .' \\   ,`--.' | ");
+	mvwprintw(win1,5,16,",---.'     \\  /  ;    '.    ,---.'     \\        ,'_ /|           ,----,'    | /    /  : ");
+	mvwprintw(win1,6,16,"|   |  .`\\  |:  :       \\   |   |  .`\\  |  .--. |  | :           |    :  .  ;:    |.' '  ");
+	mvwprintw(win1,7,16,"|   ' '  ;  :|  :  ' ;.   : |   ' '  ;  :|  ' | |  . .           `----'/  ;     '   ' ; ");
+	mvwprintw(win1,8,16,"'   | ;  .  ||  |  ;/  \\   \\'   | ;  .  ||  | ' |  | |             /  ;  /      |   | | ");
+	mvwprintw(win1,9,16,"|   | :  |  ''  :  | \\  \\ ,'|   | :  |  ':  | | :  ' ;            ;  /  /-,     '   : ; ");
+	mvwprintw(win1,10,16,"'   : | /  ; |  |  '  '--'  '   : | /  ; |  ; ' |  | '           /  /  /.`|     |   | '  ");
+	mvwprintw(win1,11,16,"|   | '` ,/  |  :  :        |   | '` ,/  :  | : ;  ; |         ./__;      :     '   : | ");
+	mvwprintw(win1,12,16,";   :  .'    |  | ,'        ;   :  .'    '  :  `--'   \\        |   :    .'      ;   |.' ");
+	mvwprintw(win1,13,16,"|   ,.'      `--''          |   ,.'      :  ,      .-./        ;   | .'         '---'   ");
+	mvwprintw(win1,14,16,"'---'                       '---'         `--`----'            `---'                    ");
+	wrefresh(win1);
+	Sleep(200);
+	wclear(win1);
+	refresh();
+	
+	box(win1,0,0);
+	mvwprintw(win1,3,16," ");
+	wrefresh(win1);
+	Sleep(200);
+	wclear(win1);
+	refresh();
+	
+}
 
 int lanjut(){
 	clear();
