@@ -154,79 +154,181 @@ void kocok(){		//Animasi pengocokan dadu
 	
 }
 
-void gamedadu(){
-    float bilangan[memory];
-    short int tebakan;
-    short int dadu;
+void gamedadu(){			//Inti game
+	k:
+	clear();
+	WINDOW * win1 = newwin(0,0,0,0);	//window fullscreen
+	refresh();
+	box(win1,0,0);
+	mvwprintw(win1,3,100 ,"Saldo Anda");
+	mvwprintw(win1,4,104,"$");
+	mvwprintw(win1,4,105,"%d",saldo);
 	
-	srand(time(NULL));
-	dadu = rand()%6+1;
-	echo();
+	wrefresh(win1);
+    float bilangan[memory];	//mengatasi bug input scanw
+    short int tebakan;		//menyimpan data tebakan pemain
+	
+	srand(time(NULL));		//penghasil angka acak untuk dadu yang akan ditebak
+	dadu = rand()%6+1;		//menghasilkan angka dari 1-6
+	curs_set(1)	;
+	echo();					//echo berfungsi untuk membuat input user tertera di layar
 	
 	WINDOW * win3 = newwin (7,21,12,50);
 	refresh();
 	box(win3,0,0);
 	wrefresh(win3);
+	mvwprintw(win3,1,4,"TARUHAN ANDA");
+	wrefresh(win3);
+	mvwprintw(win3,3,9,"$");
+mvwscanw(win3,3,10,"%d", &taruhan);		//menerima input user untuk nominal taruhan
+	refresh();
+	wclear(win3);
+	refresh();
+	
+	box(win3,0,0);
+	wrefresh(win3);
 	mvwprintw(win3,1,4,"TEBAKAN ANDA");
 	wrefresh(win3);
-mvwscanw(win3,3,10,"%d", &tebakan);
+mvwscanw(win3,3,10,"%d", &tebakan);		//menerima input user untuk angka tebakan pema
 	refresh();
-	clear();
-	kocok();
+	wclear(win3);
+	wclear(win1);
+	kocok();							//menampilkan animasi pengocokan dadu
 	
-	switch (dadu){
+	refresh();
+	box(win1,0,0);
+	wrefresh(win1);
+	
+	switch (dadu){		//switch case untuk hasil pengacakan angka oleh rand
 		
-		case 1:
+		case 1:			//tampilan jika hasil rand merupakan 1
+		clear();	
+		dadu4();
+		Sleep(200);
+		clear();
+		dadu5();
+		Sleep(400);
+		clear();
+		dadu6();
+		Sleep(600);	
+		clear();
 		dadu1();
 		break;
 		
-		case 2:
+		case 2:			//tampilan jika hasil rand merupakan 2
+		clear();	
+		dadu5();
+		Sleep(200);
+		clear();
+		dadu6();
+		Sleep(400);
+		clear();
+		dadu1();
+		Sleep(600);	
+		clear();
 		dadu2();
 		break;
 		
-		case 3:
+		case 3:			//tampilan jika hasil rand merupakan 3
+		clear();	
+		dadu6();
+		Sleep(200);
+		clear();
+		dadu1();
+		Sleep(400);
+		clear();
+		dadu2();
+		Sleep(600);	
+		clear();
 		dadu3();
 		break;
 		
-		case 4:
+		case 4:			//tampilan jika hasil rand merupakan 4
+		clear();	
+		dadu1();
+		Sleep(200);
+		clear();
+		dadu2();
+		Sleep(400);
+		clear();
+		dadu3();
+		Sleep(600);	
+		clear();	
 		dadu4();
 		break;
 		
-		case 5:
+		case 5:			//tampilan jika hasil rand merupakan 5
+		clear();	
+		dadu2();
+		Sleep(200);
+		clear();
+		dadu3();
+		Sleep(400);
+		clear();
+		dadu4();
+		Sleep(600);	
+		clear();	
 		dadu5();
 		break;
 		
-		case 6:
+		case 6:			//tampilan jika hasil rand merupakan 6
+		clear();	
+		dadu3();
+		Sleep(200);
+		clear();
+		dadu4();
+		Sleep(400);
+		clear();
+		dadu5();
+		Sleep(600);	
+		clear();
 		dadu6();
 		break;
 	}
 		
-	if(tebakan == dadu){
 		
+	if(tebakan == dadu){			//pengecekan hasil pengacakan dadu dan tebakan pemain
+		curs_set(0);	
 		mvprintw(9,54,"Anda Benar !");
 		refresh();
+		saldo = saldo + taruhan;	//jika menang menambahkan saldo dengan jumlah taruhan pemain
+		mvwprintw(win1,4,105,"%d",saldo);
+		mvprintw(23,50,"Saldo anda saat ini");
+		mvprintw(24,58,"$");
+		mvprintw(24,59,"%d",saldo);
 		
 		}
 		else{
 			mvprintw(9,54,"Anda Salah !");
 			refresh();
+			saldo = saldo - taruhan;	//jika kalah mengurangi saldo dengan jumlah taruhan pemain
+			mvwprintw(win1,4,105,"%d",saldo);
+			mvprintw(23,50,"Saldo anda saat ini");
+			mvprintw(24,58,"$");
+			mvprintw(24,59,"%d",saldo);
 				}
-			
 			char y;
-			noecho();
+			noecho();					//noecho membuat input user tidak tercetak di layar
+			if(saldo>0){
 			mvprintw(21,40,"Apakah anda ingin bermain lagi?(y/n) : ");
 			y = getch();
 			clear();
 			
 			if(y =='y'){
-				goto k;
+				goto k;					//kembali ke menu input taruhan dan angka
 			}
 			else{
-				mvprintw(10,46,"Terimakasih telah bermain!");
+				mvprintw(15,46,"Terimakasih telah bermain!");	//menghetikan permainan
 				Sleep(700);
-				exit;
+			}
+	}
+			else{
+				mvprintw(21,60-16,"MAAF SALDO ANDA TIDAK MENCUKUPI");	//menghentikan permainan dengan paksa
+				getch();
 			}
 }
+
+
 
 int lanjut(){
 	clear();
