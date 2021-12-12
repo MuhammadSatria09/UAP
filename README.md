@@ -5,7 +5,7 @@ Kelompok :
 1. Muhammad Satria Aulia
 (2157051010)
 
-2. Muhammad abdi firdaus
+2. M abdi firdaus
 (2117051031)
 
 3. Talia desty maharani
